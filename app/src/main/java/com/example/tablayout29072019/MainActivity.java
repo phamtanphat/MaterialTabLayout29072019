@@ -1,16 +1,13 @@
 package com.example.tablayout29072019;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
-import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.tabs.TabLayout;
-
-import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     MaterialToolbar materialToolbar;
     ViewPager viewPager;
+    ViewPagerAdapter viewPagerAdapter;
+    FragmentManager fragmentManager = getSupportFragmentManager();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Main Activity");
 //        getSupportActionBar().setDisplayShowHomeEnabled(true);
 //        getSupportActionBar().setIcon(android.R.drawable.ic_menu_sort_by_size);
+        viewPagerAdapter = new ViewPagerAdapter(fragmentManager);
+        viewPagerAdapter.addArrayTitleFragment(new AndroidFragment(),"Android");
+        viewPagerAdapter.addArrayTitleFragment(new PhpFragment(),"Php");
 
+        tabLayout.setupWithViewPager(viewPager);
     }
 }

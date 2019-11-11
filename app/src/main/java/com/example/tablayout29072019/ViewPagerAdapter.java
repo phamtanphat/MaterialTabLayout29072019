@@ -8,12 +8,13 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
 
-public class TabLayoutPager extends FragmentPagerAdapter {
+public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     private FragmentManager fragmentManager = null;
     private ArrayList<String> arrayListTitle = new ArrayList<>();
+    private ArrayList<Fragment> fragments = new ArrayList<>();
 
-    public TabLayoutPager(@NonNull FragmentManager fm) {
+    public ViewPagerAdapter(@NonNull FragmentManager fm) {
         super(fm);
         fragmentManager = fm;
     }
@@ -29,8 +30,10 @@ public class TabLayoutPager extends FragmentPagerAdapter {
         return fragmentManager.getFragments().size();
     }
 
-    public void addArrayTitleFragment(String titleFragment){
+    public void addArrayTitleFragment(Fragment fragment,String titleFragment){
+        fragments.add(fragment);
         arrayListTitle.add(titleFragment);
+
     }
 
     @Nullable
