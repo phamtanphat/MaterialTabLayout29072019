@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter.addArrayTitleFragment(new AndroidFragment(),"Android");
         viewPagerAdapter.addArrayTitleFragment(new PhpFragment(),"Php");
 
+
         tabLayout.setupWithViewPager(viewPager);
     }
 }

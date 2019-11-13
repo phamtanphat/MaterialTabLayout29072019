@@ -10,24 +10,22 @@ import java.util.ArrayList;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
-    private FragmentManager fragmentManager = null;
     private ArrayList<String> arrayListTitle = new ArrayList<>();
     private ArrayList<Fragment> fragments = new ArrayList<>();
 
     public ViewPagerAdapter(@NonNull FragmentManager fm) {
         super(fm);
-        fragmentManager = fm;
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        return fragmentManager.getFragments().get(position);
+        return fragments.get(position);
     }
 
     @Override
     public int getCount() {
-        return fragmentManager.getFragments().size();
+        return fragments.size();
     }
 
     public void addArrayTitleFragment(Fragment fragment,String titleFragment){
