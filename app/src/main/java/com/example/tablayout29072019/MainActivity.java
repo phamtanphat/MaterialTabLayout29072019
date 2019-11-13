@@ -1,10 +1,14 @@
 package com.example.tablayout29072019;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.tabs.TabLayout;
@@ -39,5 +43,27 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.mipmap.ic_launcher);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.item_them :
+                Toast.makeText(this, "Item them", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.item_facebook :
+                Toast.makeText(this, "Facebook", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.item_github :
+                Toast.makeText(this, "Github", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return true;
     }
 }
