@@ -35,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter.addArrayTitleFragment(new AndroidFragment(),"Android");
         viewPagerAdapter.addArrayTitleFragment(new PhpFragment(),"Php");
 
-
+        viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.mipmap.ic_launcher);
+
     }
 }
