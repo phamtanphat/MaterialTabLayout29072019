@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        app:showAsAction="always"
+        android:icon="@android:drawable/btn_plus"
+        android:id="@+id/item_them"
+        android:title="Them"/>
+
+    <item android:title="Chia se">
+        <menu>
+            <item
+                android:icon="@android:drawable/btn_plus"
+                android:id="@+id/item_facebook"
+                android:title="Facebook"/>
+            <item
+                android:icon="@android:drawable/btn_plus"
+                android:id="@+id/item_github"
+                android:title="Github"/>
+        </menu>
+    </item>
+</menu>
